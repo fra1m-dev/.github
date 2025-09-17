@@ -1,0 +1,51 @@
+name: Task
+description: Создать задачу (feature/refactor/docs)
+title: "[Task] "
+labels: ["type: task"]
+assignees: []
+
+body:
+  - type: input
+    id: epic
+    attributes:
+      label: Epic / Модуль
+      description: Связанный эпик или модуль (например, Users/Auth/Infra)
+      placeholder: Users
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Влияние/срочность
+      options:
+        - "High"
+        - "Medium"
+        - "Low"
+      default: 1
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - Feature
+        - Refactor
+        - Docs
+        - Test
+        - Infra
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: desc
+    attributes:
+      label: Description
+      description: Коротко, критерии готовности (AC), риски.
+      placeholder: Что именно нужно сделать…
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline (YYYY-MM-DD)
+      placeholder: "2025-09-30"
